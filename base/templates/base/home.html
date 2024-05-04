@@ -9,15 +9,14 @@
     }
 </style>
 
-<h3>Home Template</h3>
 <hr>
 <div class="home-container">
     <div>
         {% include 'base/topics_component.html' %}
     </div>
-    <div>
+    <div class="" style="margin-right: 50px;">
         <h5>{{room_count}} rooms available</h5>
-        <a href="{% url 'create-room' %}">Create Room</a>
+        <a class="btn btn-primary btn-sm" href="{% url 'create-room' %}">Create Room</a>
         <hr>
         {% include 'base/feed_component.html' %}
     </div>

@@ -1,10 +1,13 @@
-<h3>Browse Topics</h3>
-        <hr>
-        <div>
-            <a href="{% url 'home'  %}">All</a>
-        </div>
-        {% for topic in topics %}
-        <div>
-            <a href="{% url 'home'  %}?q={{topic.name}}">{{topic.name}}</a>
-        </div>
-        {% endfor %}
+<div style="margin-right: 50px;">
+    <h3>Browse Topics</h3>
+    <hr>
+    <div class="mb-2 list-group">
+        <a class="text-decoration-none list-group-item list-group-item-action" href="{% url 'home'  %}">All</a>
+    </div>
+    {% for topic in topics %}
+    <div class="mb-2 list-group">
+        <a class="text-decoration-none list-group-item list-group-item-action"
+            href="{% url 'home'  %}?q={{topic.name}}">{{topic.name}}</a>
+    </div>
+    {% endfor %}
+</div>
