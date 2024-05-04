@@ -1,23 +1,25 @@
 {% extends 'main.html' %}
 
 {% block content %}
-
+<hr>
 {% if page == 'login' %}
-<div>
+<div class="mt-3">
   <form method="POST" action="">
     {% csrf_token %}
-    <label>Username: </label>
-    <input type="text" name="username" placeholder="Enter Username">
 
-    <label>Password: </label>
-    <input type="password" name="password" placeholder="Enter Password">
+    <div class="d-flex flex-column w-25">
+      <label>Username: </label>
+      <input class="form-control" type="text" name="username" placeholder="Enter Username">
+      <label class="mt-2">Password: </label>
+      <input class="form-control" type="password" name="password" placeholder="Enter Password">
+    </div>
 
-    <input type="submit" value="Login">
+    <input class="btn btn-primary mt-2" type="submit" value="Log in">
   </form>
 
-  <div class="auth__action">
+  <div class="auth__action mt-4">
     <p>Haven't signed up yet?</p>
-    <a href="{% url 'register' %}" class="btn btn--link">Sign Up</a>
+    <a href="{% url 'register' %}" class="btn border-primary btn--link">Sign up</a>
   </div>
 </div>
 
@@ -29,12 +31,19 @@
     {{form.as_p}}
     <input type="submit" value="Register">
   </form>
-  <div class="auth__action">
+  <div class="auth__action mt-4">
     <p>Already signed up yet?</p>
-    <a href="{% url 'login' %}" class="btn btn--link">Log In</a>
+    <a href="{% url 'login' %}" class="btn border-primary btn--link">Log In</a>
   </div>
 </div>
 
 {% endif %}
 
 {% endblock content %}
+
+
+<!-- <div class="mt-3 mb-1" style="width: 300px;">
+  <form method="GET" action="{% url 'home' %}">
+      <input class="form-control" type="text" name="q" placeholder="Search Rooms...">
+  </form>
+</div> -->
